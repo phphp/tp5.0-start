@@ -9,13 +9,8 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-return [
-    '__pattern__' => [
-        'name' => '\w+',
-    ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
-    ],
+use think\Route;
 
-];
+// api/v0/goods/show?goodsId=1
+Route::get('api/:version/goods/show',
+            'api/:version.Goods/show');
